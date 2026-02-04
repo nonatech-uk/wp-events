@@ -1,0 +1,760 @@
+/**
+ * Parish Events Styles
+ */
+
+/* Events List */
+.parish-events-list {
+    max-width: 800px;
+}
+
+.parish-event-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.parish-event-item:last-child {
+    border-bottom: none;
+}
+
+.parish-event-date-badge {
+    flex-shrink: 0;
+    width: 70px;
+    text-align: center;
+    background: #4a6741;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 8px;
+}
+
+.parish-event-day {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.parish-event-month {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+.parish-event-year {
+    display: block;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.parish-event-content {
+    flex: 1;
+}
+
+.parish-event-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.parish-event-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.parish-event-title a:hover {
+    color: #4a6741;
+}
+
+.parish-event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.parish-event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.parish-event-icon {
+    flex-shrink: 0;
+}
+
+.parish-event-excerpt {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.parish-event-documents {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.parish-event-documents a {
+    color: #4a6741;
+    margin-left: 8px;
+}
+
+.parish-event-documents a:not(:last-child)::after {
+    content: ',';
+}
+
+.parish-event-link {
+    font-size: 14px;
+    color: #4a6741;
+    text-decoration: none;
+}
+
+.parish-event-link:hover {
+    text-decoration: underline;
+}
+
+.parish-events-no-results {
+    text-align: center;
+    color: #666;
+    padding: 40px 20px;
+    font-style: italic;
+}
+
+/* Subscribe Link */
+.parish-events-subscribe {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.parish-events-subscribe-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.parish-events-subscribe-link:hover {
+    color: #4a6741;
+}
+
+/* Calendar */
+.parish-events-calendar {
+    max-width: 800px;
+}
+
+.parish-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.parish-calendar-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.parish-calendar-nav {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.parish-calendar-nav:hover {
+    background: #f5f5f5;
+}
+
+.parish-calendar-grid {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.parish-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.parish-calendar-weekdays span {
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: #666;
+}
+
+.parish-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.parish-calendar-day {
+    min-height: 80px;
+    padding: 8px;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+.parish-calendar-day:nth-child(7n) {
+    border-right: none;
+}
+
+.parish-calendar-day-empty {
+    background: #fafafa;
+}
+
+.parish-calendar-day-today {
+    background: #f0f6fc;
+}
+
+.parish-calendar-day-number {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.parish-calendar-day-today .parish-calendar-day-number {
+    color: #4a6741;
+}
+
+.parish-calendar-day-events {
+    font-size: 12px;
+}
+
+.parish-calendar-day-event {
+    display: block;
+    background: #4a6741;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.parish-calendar-day-event:hover {
+    background: #3d5c3a;
+}
+
+.parish-calendar-loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* Next Event */
+.parish-next-event {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 500px;
+}
+
+.parish-next-event-header {
+    margin-bottom: 16px;
+}
+
+.parish-next-event-label {
+    background: #4a6741;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.parish-next-event-date {
+    margin-bottom: 12px;
+    color: #666;
+}
+
+.parish-next-event-day {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.parish-next-event-full-date {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a6741;
+}
+
+.parish-next-event-time {
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.parish-next-event-title {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+}
+
+.parish-next-event-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.parish-next-event-title a:hover {
+    color: #4a6741;
+}
+
+.parish-next-event-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.parish-next-event-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.parish-next-event-documents {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+
+.parish-next-event-documents h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.parish-next-event-documents ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.parish-next-event-documents li {
+    margin-bottom: 6px;
+}
+
+.parish-next-event-documents a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4a6741;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.parish-next-event-documents a:hover {
+    text-decoration: underline;
+}
+
+.parish-next-event-actions {
+    margin-bottom: 16px;
+}
+
+.parish-next-event-button {
+    display: inline-block;
+    background: #4a6741;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.parish-next-event-button:hover {
+    background: #3d5c3a;
+    color: #fff;
+}
+
+.parish-next-event-footer {
+    font-size: 13px;
+    color: #666;
+    padding-top: 16px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.parish-next-event-footer a {
+    color: #4a6741;
+    text-decoration: none;
+}
+
+.parish-next-event-footer a:hover {
+    text-decoration: underline;
+}
+
+.parish-next-event-separator {
+    margin: 0 8px;
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .parish-event-item {
+        gap: 12px;
+    }
+
+    .parish-event-date-badge {
+        width: 60px;
+        padding: 8px 6px;
+    }
+
+    .parish-event-day {
+        font-size: 22px;
+    }
+
+    .parish-event-month {
+        font-size: 12px;
+    }
+
+    .parish-event-year {
+        font-size: 10px;
+    }
+
+    .parish-event-title {
+        font-size: 16px;
+    }
+
+    .parish-calendar-weekdays span {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    .parish-calendar-day {
+        min-height: 60px;
+        padding: 4px;
+    }
+
+    .parish-calendar-day-number {
+        font-size: 12px;
+    }
+
+    .parish-calendar-day-event {
+        font-size: 10px;
+        padding: 1px 4px;
+    }
+}
+
+/* Single Event Page */
+.parish-event-single {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.parish-event-single .entry-header {
+    margin-bottom: 24px;
+}
+
+.parish-event-single .entry-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.parish-event-details {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.parish-event-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.parish-event-detail:not(:last-child) {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.parish-event-detail svg {
+    flex-shrink: 0;
+    color: #4a6741;
+}
+
+.parish-event-detail a {
+    color: #4a6741;
+    text-decoration: none;
+}
+
+.parish-event-detail a:hover {
+    text-decoration: underline;
+}
+
+.parish-event-single .entry-content {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.parish-event-single .parish-event-documents {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.parish-event-single .parish-event-documents h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+}
+
+.parish-event-single .parish-event-documents ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.parish-event-single .parish-event-documents li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.parish-event-single .parish-event-documents li:last-child {
+    border-bottom: none;
+}
+
+.parish-event-single .parish-event-documents a {
+    color: #4a6741;
+    text-decoration: none;
+}
+
+.parish-event-single .parish-event-documents a:hover {
+    text-decoration: underline;
+}
+
+.parish-event-nav {
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.parish-event-nav a {
+    color: #4a6741;
+    text-decoration: none;
+}
+
+.parish-event-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Auto-document Status Messages */
+.parish-event-doc-status {
+    color: #666;
+    font-style: italic;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-left: 3px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    margin: 0;
+}
+
+.parish-event-doc-status-inline {
+    color: #666;
+}
+
+.parish-event-doc-status-inline em {
+    font-size: 13px;
+}
+
+/* Annex Badge */
+.parish-event-annex-badge {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #555;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* Pagination Controls */
+.parish-events-container {
+    max-width: 800px;
+}
+
+.parish-events-container.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.parish-events-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.parish-events-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.parish-events-per-page label {
+    font-size: 14px;
+    color: #666;
+}
+
+.parish-events-per-page-select {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.parish-events-page-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.parish-events-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.parish-events-page-btn {
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.parish-events-page-btn:hover:not(:disabled) {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+.parish-events-page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.parish-events-page-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+.parish-events-page-num {
+    min-width: 36px;
+    height: 36px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.parish-events-page-num:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+.parish-events-page-num.active {
+    background: #4a6741;
+    border-color: #4a6741;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .parish-events-controls {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .parish-events-pagination {
+        flex-wrap: wrap;
+    }
+
+    .parish-events-page-numbers {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Cancelled Events */
+.parish-event-cancelled .parish-event-title a,
+.parish-event-cancelled.parish-event-single .entry-title {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.parish-event-cancelled .parish-event-title a:hover {
+    color: #777;
+}
+
+.parish-event-cancelled .parish-event-date-badge {
+    background: #999;
+}
+
+.parish-event-cancelled .parish-event-content {
+    opacity: 0.7;
+}
+
+/* Calendar cancelled events */
+.parish-calendar-day-event.parish-event-cancelled {
+    background: #999;
+    text-decoration: line-through;
+}
+
+.parish-calendar-day-event.parish-event-cancelled:hover {
+    background: #777;
+}
+
+/* Next Event cancelled */
+.parish-next-event.parish-event-cancelled .parish-next-event-title a {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.parish-next-event.parish-event-cancelled .parish-next-event-label {
+    background: #999;
+}
+
+.parish-next-event.parish-event-cancelled .parish-next-event-full-date {
+    color: #999;
+}
