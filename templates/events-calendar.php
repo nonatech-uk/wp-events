@@ -31,6 +31,8 @@ if ($next_month > 12) {
 }
 ?>
 
+<?php Parish_Events::render_subscribe_block(); ?>
+
 <div class="parish-events-calendar" data-month="<?php echo $month; ?>" data-year="<?php echo $year; ?>">
     <div class="parish-calendar-header">
         <button class="parish-calendar-nav parish-calendar-prev" data-month="<?php echo $prev_month; ?>" data-year="<?php echo $prev_year; ?>">
@@ -82,5 +84,3 @@ if ($next_month > 12) {
 
     <div class="parish-calendar-loading" style="display: none;">Loading...</div>
 </div>
-
-<?php Parish_Events::render_subscribe_block(); ?>

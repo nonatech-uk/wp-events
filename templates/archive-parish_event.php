@@ -33,6 +33,8 @@ $instance_id = 'parish-events-archive';
             <h1 class="page-title">Events</h1>
         </header>
 
+        <?php Parish_Events::render_subscribe_block(); ?>
+
         <div class="parish-events-container"
              id="<?php echo esc_attr($instance_id); ?>"
              data-per-page="<?php echo esc_attr($per_page); ?>"
@@ -80,8 +82,6 @@ $instance_id = 'parish-events-archive';
                 <button class="parish-events-page-btn parish-events-next" <?php echo $total_pages <= 1 ? 'disabled' : ''; ?>>Next &raquo;</button>
             </div>
             <?php endif; ?>
-
-            <?php Parish_Events::render_subscribe_block(); ?>
         </div>
     </div>
 </main>

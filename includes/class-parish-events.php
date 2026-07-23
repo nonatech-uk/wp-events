@@ -1264,6 +1264,8 @@ class Parish_Events {
              data-total="<?php echo esc_attr($total_events); ?>"
              data-show="<?php echo esc_attr($show); ?>">
 
+            <?php self::render_subscribe_block(); ?>
+
             <?php if ($use_pagination): ?>
             <div class="parish-events-controls">
                 <div class="parish-events-per-page">
@@ -1307,8 +1309,6 @@ class Parish_Events {
                 <button class="parish-events-page-btn parish-events-next" <?php echo $total_pages <= 1 ? 'disabled' : ''; ?>>Next &raquo;</button>
             </div>
             <?php endif; ?>
-
-            <?php self::render_subscribe_block(); ?>
         </div>
         <?php
         return ob_get_clean();

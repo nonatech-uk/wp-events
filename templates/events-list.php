@@ -12,6 +12,8 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
+<?php Parish_Events::render_subscribe_block(); ?>
+
 <div class="parish-events-list">
     <?php if (!empty($events)): ?>
         <?php foreach ($events as $event): ?>
@@ -66,5 +68,3 @@ if (!defined('ABSPATH')) {
         </p>
     <?php endif; ?>
 </div>
-
-<?php Parish_Events::render_subscribe_block(); ?>
