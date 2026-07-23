@@ -232,7 +232,9 @@ class Parish_Events_ICal {
      */
     private function escape_ical($text) {
         $text = str_replace('\\', '\\\\', $text);
-        $text = str_replace("\n", '\\n', $text);
+        // Normalise all line-break forms (CRLF, bare CR, LF) to an escaped \n
+        // per RFC 5545 TEXT escaping — a raw CR must never reach the output.
+        $text = str_replace(array("\r\n", "\r", "\n"), '\\n', $text);
         $text = str_replace(',', '\\,', $text);
         $text = str_replace(';', '\\;', $text);
         return $text;
