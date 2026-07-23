@@ -8,7 +8,33 @@
     document.addEventListener('DOMContentLoaded', function() {
         initCalendars();
         initEventsPagination();
+        initCopyFeedButtons();
     });
+
+    function initCopyFeedButtons() {
+        document.querySelectorAll('.parish-events-copy-feed').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var url = btn.dataset.feedUrl;
+                var originalText = btn.textContent;
+
+                function showCopied() {
+                    btn.classList.add('copied');
+                    btn.textContent = 'Copied!';
+                    setTimeout(function() {
+                        btn.classList.remove('copied');
+                        btn.textContent = originalText;
+                    }, 2000);
+                }
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url).then(showCopied);
+                } else {
+                    // Fallback for older browsers
+                    window.prompt('Copy this calendar feed link:', url);
+                }
+            });
+        });
+    }
 
     function initCalendars() {
         var calendars = document.querySelectorAll('.parish-events-calendar');

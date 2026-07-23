@@ -126,24 +126,57 @@
     font-style: italic;
 }
 
-/* Subscribe Link */
+/* Subscribe / "Add to your diary" block */
 .parish-events-subscribe {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #e5e5e5;
 }
 
-.parish-events-subscribe-link {
+.parish-events-subscribe-heading {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
 }
 
-.parish-events-subscribe-link:hover {
+.parish-events-subscribe-note {
+    margin: 6px 0 12px;
+    color: #666;
+    font-size: 13px;
+}
+
+.parish-events-subscribe-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.parish-events-subscribe-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border: 1px solid #4a6741;
+    border-radius: 16px;
+    background: none;
     color: #4a6741;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.parish-events-subscribe-btn:hover {
+    background: #4a6741;
+    color: #fff;
+}
+
+.parish-events-copy-feed.copied {
+    background: #4a6741;
+    color: #fff;
 }
 
 /* Calendar */

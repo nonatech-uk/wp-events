@@ -83,9 +83,4 @@ if ($next_month > 12) {
     <div class="parish-calendar-loading" style="display: none;">Loading...</div>
 </div>
 
-<div class="parish-events-subscribe" style="margin-top: 20px;">
-    <a href="<?php echo home_url('/events/feed.ics'); ?>" class="parish-events-subscribe-link">
-        <svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
-        Subscribe to calendar
-    </a>
-</div>
+<?php Parish_Events::render_subscribe_block(); ?>

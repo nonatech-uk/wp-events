@@ -14,6 +14,18 @@ class Parish_Events_ICal {
 
     public function init() {
         add_action('template_redirect', array($this, 'handle_ical_request'));
+        add_filter('redirect_canonical', array($this, 'prevent_canonical_redirect'), 10, 2);
+    }
+
+    /**
+     * Stop WordPress 301-redirecting /events/feed.ics to a trailing-slash URL.
+     * Some calendar clients handle redirects poorly, so serve the feed directly.
+     */
+    public function prevent_canonical_redirect($redirect_url, $requested_url) {
+        if (get_query_var('parish_events_ical')) {
+            return false;
+        }
+        return $redirect_url;
     }
 
     /**
@@ -36,6 +48,7 @@ class Parish_Events_ICal {
 
         header('Content-Type: text/calendar; charset=utf-8');
         header('Content-Disposition: attachment; filename="albury-parish-events.ics"');
+        header('Cache-Control: public, max-age=3600');
 
         echo $this->generate_ical($events);
     }
@@ -51,6 +64,15 @@ class Parish_Events_ICal {
             'meta_key'       => '_parish_event_date',
             'orderby'        => 'meta_value',
             'order'          => 'ASC',
+            // Recent + future only: keep the feed from growing forever.
+            'meta_query'     => array(
+                array(
+                    'key'     => '_parish_event_date',
+                    'value'   => date('Y-m-d', strtotime('-30 days')),
+                    'compare' => '>=',
+                    'type'    => 'DATE',
+                ),
+            ),
         );
 
         $events_query = new WP_Query($query_args);

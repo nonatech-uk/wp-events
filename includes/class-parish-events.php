@@ -1308,12 +1308,7 @@ class Parish_Events {
             </div>
             <?php endif; ?>
 
-            <div class="parish-events-subscribe">
-                <a href="<?php echo home_url('/events/feed.ics'); ?>" class="parish-events-subscribe-link">
-                    <svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
-                    Subscribe to calendar
-                </a>
-            </div>
+            <?php self::render_subscribe_block(); ?>
         </div>
         <?php
         return ob_get_clean();
@@ -1506,5 +1501,33 @@ class Parish_Events {
             'nonce'          => wp_create_nonce('parish_events_nonce'),
             'paginateNonce'  => wp_create_nonce('parish_events_paginate'),
         ));
+    }
+
+    /**
+     * Render the "Add to your diary" subscribe block.
+     *
+     * Shared by the events list/calendar shortcodes and the archive/list/calendar templates.
+     * Offers one-click subscription (webcal for Apple/Outlook, add-by-URL for Google)
+     * plus a copyable feed URL for other clients. Subscriptions are read-only and
+     * update automatically as events are published or changed.
+     */
+    public static function render_subscribe_block() {
+        $feed_url   = home_url('/events/feed.ics');
+        $webcal_url = preg_replace('#^https?://#', 'webcal://', $feed_url);
+        $google_url = 'https://calendar.google.com/calendar/render?cid=' . rawurlencode($webcal_url);
+        ?>
+        <div class="parish-events-subscribe">
+            <div class="parish-events-subscribe-heading">
+                <svg viewBox="0 0 24 24" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                Add these events to your diary
+            </div>
+            <p class="parish-events-subscribe-note">Your calendar will update automatically as events are added or changed. Subscriptions are read-only.</p>
+            <div class="parish-events-subscribe-buttons">
+                <a href="<?php echo esc_url($webcal_url); ?>" class="parish-events-subscribe-btn">Apple&nbsp;/&nbsp;Outlook</a>
+                <a href="<?php echo esc_url($google_url); ?>" class="parish-events-subscribe-btn" target="_blank" rel="noopener">Google Calendar</a>
+                <button type="button" class="parish-events-subscribe-btn parish-events-copy-feed" data-feed-url="<?php echo esc_attr($feed_url); ?>">Copy feed link</button>
+            </div>
+        </div>
+        <?php
     }
 }

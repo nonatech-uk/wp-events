@@ -3,7 +3,7 @@
  * Plugin Name: Events
  * Plugin URI: https://github.com/nonatech-uk/wp-events
  * Description: Manage and display parish events with calendar, iCal feed, and Meilisearch integration
- * Version: 1.5.3
+ * Version: 1.5.4
  * Author: NonaTech Services Ltd
  * License: GPL v2 or later
  * Text Domain: events
@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PARISH_EVENTS_VERSION', '1.5.3');
+define('PARISH_EVENTS_VERSION', '1.5.4');
 define('PARISH_EVENTS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('PARISH_EVENTS_PLUGIN_URL', plugin_dir_url(__FILE__));
 
